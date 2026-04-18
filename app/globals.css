@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f8f8fa;
+  --foreground: #0f0e1a;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(160deg, #ede9fe 0%, #f8f8fa 30%, #f8f8fa 70%, #ede9fe 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Floating avatars */
+@keyframes float  { 0%,100%{transform:translateY(0)   rotate(0deg)}  50%{transform:translateY(-14px) rotate(2deg)}  }
+@keyframes float2 { 0%,100%{transform:translateY(0)   rotate(0deg)}  50%{transform:translateY(-10px) rotate(-2deg)} }
+@keyframes float3 { 0%,100%{transform:translateY(0)}                 50%{transform:translateY(-8px)}                }
+
+/* Integration scroll */
+@keyframes scroll-left  { 0%{transform:translateX(0)}    100%{transform:translateX(-50%)} }
+@keyframes scroll-right { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)}    }
+
+/* Animated dashed lines in diagrams */
+@keyframes dash { to { stroke-dashoffset: -24; } }
+@keyframes dash-rev { to { stroke-dashoffset: 24; } }
+
+/* Ticker scroll */
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+.animate-float  { animation: float  5s ease-in-out infinite; }
+.animate-float2 { animation: float2 6s ease-in-out infinite; }
+.animate-float3 { animation: float3 4.5s ease-in-out infinite 1s; }
+.animate-float4 { animation: float2 5.5s ease-in-out infinite 0.5s; }
+
+.animate-scroll-left  { animation: scroll-left  35s linear infinite; }
+.animate-scroll-right { animation: scroll-right 35s linear infinite; }
+
+.animate-dash     { animation: dash     1.2s linear infinite; }
+.animate-dash-rev { animation: dash-rev 1.2s linear infinite; }
+
+.animate-ticker   { animation: ticker 25s linear infinite; }
+
+.dot-grid {
+  background-color: transparent;
+  background-image: radial-gradient(circle, #d0d0dc 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+/* Binary text scroll upward */
+@keyframes scroll-up { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
+.animate-scroll-up { animation: scroll-up 6s linear infinite; }
+
+/* Pulse ring */
+@keyframes ping-slow { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(1.5);opacity:0} }
+.animate-ping-slow { animation: ping-slow 2s ease-out infinite; }
+
+/* Animated gradient border */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes border-rotate { to { --border-angle: 360deg; } }
+.animated-border-card {
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    conic-gradient(from var(--border-angle), #7c3aed 0%, #818cf8 33%, #3b82f6 66%, #7c3aed 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: border-rotate 6s linear infinite;
+}
+.animated-border-card-dark {
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(#5b21b6, #5b21b6),
+    conic-gradient(from var(--border-angle), #a78bfa 0%, #60a5fa 50%, #a78bfa 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: border-rotate 6s linear infinite;
+}
+
+/* Button shimmer */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.32), transparent);
+  transform: skewX(-20deg);
+  transition: left 0s;
+}
+.shimmer-btn:hover::after {
+  left: 160%;
+  transition: left 0.55s ease;
+}
+
+/* Grain / noise texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Hide scrollbar for horizontal scroll strips */
+.scrollbar-hide { scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Personas section purple dot-grid */
+.purple-dot-grid {
+  background-color: #6d28d9;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
