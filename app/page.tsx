@@ -10,11 +10,15 @@ import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import SectionReveal from "@/components/SectionReveal";
+import MobileCTA from "@/components/MobileCTA";
+import ScrollBounce from "@/components/ScrollBounce";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative">
       <Loader />
+      <MobileCTA />
+      <ScrollBounce />
 
       {/* Ambient glow orbs */}
       <div className="fixed top-[-250px] left-[-150px] w-[700px] h-[700px] rounded-full bg-violet-400/15 blur-[140px] pointer-events-none z-0" />
