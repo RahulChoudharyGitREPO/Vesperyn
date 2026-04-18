@@ -1,9 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Easing } from "framer-motion";
 
 const waveKeyframes = {
   rotate: [0, 20, -8, 20, -4, 12, 0],
-  transition: { duration: 1.6, repeat: Infinity, repeatDelay: 2.5, ease: "easeInOut" },
+  transition: { duration: 1.6, repeat: Infinity, repeatDelay: 2.5, ease: "easeInOut" as Easing },
 };
 
 const demoAvatars = [
