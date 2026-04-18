@@ -389,7 +389,7 @@ export default function Features() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-auto">
 
           {/* Large left — spans 2 rows */}
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,ease:[0.33,1,0.68,1]}}
             className="md:row-span-2 animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <WorkflowCard />
             <div className="mt-5">
@@ -398,7 +398,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.1}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.08,ease:[0.33,1,0.68,1]}}
             className="animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <AgentsCard />
             <div className="mt-4">
@@ -407,7 +407,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.15}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.12,ease:[0.33,1,0.68,1]}}
             className="animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <IntegrationsCard />
             <div className="mt-4">
@@ -416,7 +416,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.2}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.08,ease:[0.33,1,0.68,1]}}
             className="animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <KnowledgeCard />
             <div className="mt-4">
@@ -425,7 +425,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.05}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.04,ease:[0.33,1,0.68,1]}}
             className="animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <TemplatesCard />
             <div className="mt-4">
@@ -434,7 +434,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.1}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.08,ease:[0.33,1,0.68,1]}}
             className="animated-border-card rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-200/50 hover:-translate-y-0.5 transition-all duration-300">
             <SecurityCard />
             <div className="mt-4">
@@ -443,7 +443,7 @@ export default function Features() {
             </div>
           </motion.div>
 
-          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.15}}
+          <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.1}} transition={{duration:0.55,delay:0.08,ease:[0.33,1,0.68,1]}}
             className="animated-border-card-dark rounded-3xl p-6 shadow-sm hover:shadow-xl hover:shadow-violet-400/30 hover:-translate-y-0.5 transition-all duration-300">
             <AgentPromptCard />
             <div className="mt-4">

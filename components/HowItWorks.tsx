@@ -191,10 +191,10 @@ export default function HowItWorks() {
           {steps.map((s, i) => (
             <motion.div
               key={s.number}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
               className="flex flex-col gap-4"
             >
               {s.card}
